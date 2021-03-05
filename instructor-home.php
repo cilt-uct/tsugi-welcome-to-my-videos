@@ -136,7 +136,7 @@ $OUTPUT->topNav($menu);
                 <input type="hidden" name="type"  id="type" value="remove"/>
                 <input type="hidden" id="organizer" name="organizer" value="<?= $context['email'] ?>
                 (<?= $context['user'] ?>)"/>
-                <input type="hidden" name="presenters" id="presenters" value="<?= $context['user'] ?"/>
+                <input type="hidden" name="presenters" id="presenters" value="<?= $context['user'] ?>"/>
 
                 <?php
                     if (count($context['providers']) > 1) {
