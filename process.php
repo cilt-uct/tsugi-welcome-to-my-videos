@@ -35,33 +35,28 @@ $out = array(
     ,'msg'  => 'Application failure.'
 );
 
-if ($USER->instructor) {
+$cmd = NULL;
+$filename = realpath('tmp') ."/". $result['siteid'] .".json";
+$fp = fopen($filename, 'w');
+fwrite($fp, json_encode($result));
+fclose($fp);
 
-    $cmd = NULL;
-    $filename = realpath('tmp') ."/". $result['siteid'] .".json";
-    $fp = fopen($filename, 'w');
-    fwrite($fp, json_encode($result));
-    fclose($fp);
+$cmd = $tool['script-add'] .' '. $filename;
 
-    $cmd = $tool['script-add'] .' '. $filename;
+if (!is_null($cmd)) {
+    $result['cmd'] = $cmd;
+    $result['raw'] = shell_exec($cmd);
+    $result['out'] = json_decode($result['raw']);
 
-    if (!is_null($cmd)) {
-        $result['cmd'] = $cmd; 
-        $result['raw'] = shell_exec($cmd);
-        $result['out'] = json_decode($result['raw']);
-
-        if (json_last_error() === JSON_ERROR_NONE) { 
-            $out['msg'] = $result['out']->out;
-            $out['done'] = $result['out']->success;
-        } else {
-            $out['done'] = 0;
-            $out['msg'] = json_last_error_msg();
-        } 
+    if (json_last_error() === JSON_ERROR_NONE) {
+        $out['msg'] = $result['out']->out;
+        $out['done'] = $result['out']->success;
+    } else {
+        $out['done'] = 0;
+        $out['msg'] = json_last_error_msg();
     }
-} else {
-    $out['done'] = 0;
-    $out['msg']  = 'Must be an instructor to complete this operation.';
 }
+
 
 // update output json file
 $result['msg'] = $out['msg'];

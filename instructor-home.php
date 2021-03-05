@@ -18,10 +18,6 @@ $OUTPUT->bodyStart();
 
 $OUTPUT->topNav($menu);
 
-if (!$USER->instructor) {
-    header('Location: ' . addSession('student-home.php'));
-}
-
     $context = array();
     $providers  = $LAUNCH->ltiRawParameter('lis_course_section_sourcedid','none');
     $context_id = $LAUNCH->ltiRawParameter('context_id','none');
@@ -62,13 +58,15 @@ if (!$USER->instructor) {
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <div class="card">
                         <div class="card text-center" style="margin: 5px; padding:5px;">
-                            <div style="border-radius: 50%; width: 140px;height: 140px;position: relative;
+                            <div style="border-radius: 50%; width: 150px;height: 150px;position: relative;
                                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                                background-image: url(record.jpg); background-repeat: no-repeat; background-position: -50px -8px;">
-                                    <span class="text-center bg-primary" style="width: 40px;height: 40px;
-                                        bottom: -2px;right: -2px;position: absolute; border-radius: 25px;color:white;padding: 8px;">
+                                background-image: url(images/upload_videos.png); background-repeat: no-repeat;
+                                background-size: cover;">
+                                <span class="text-center bg-primary" style="width: 40px;height: 40px;
+                                        bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
+                                        color:white;padding: 8px;">
                                     <i class="fa fa-upload"></i>
-                                 </span>
+                                </span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Upload videos<br/>
@@ -79,12 +77,13 @@ if (!$USER->instructor) {
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <div class="card text-center" style="margin: 5px; padding:5px;">
-                        <div style="border-radius: 50%; width: 140px;height: 140px;position: relative;
+                        <div style="border-radius: 50%; width: 150px;height: 150px;position: relative;
                         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                        background-image: url(record_desktop.jpg);background-position: -80px 0px;
-                        background-repeat: no-repeat; background-size: cover;">
+                        background-image: url(images/record_videos.png); background-repeat: no-repeat;
+                        background-size: cover;">
                              <span class="text-center bg-primary" style="width: 40px;height: 40px;
-                                    bottom: -2px;right: -2px;position: absolute; border-radius: 25px;color:white;padding: 8px;">
+                                    bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
+                                    color:white;padding: 8px;">
                                 <i class="fa fa-video"></i>
                              </span>
                         </div>
@@ -96,12 +95,13 @@ if (!$USER->instructor) {
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <div class="card text-center" style="margin: 5px; padding:5px;">
-                       <div style="border-radius: 50%; width: 140px;height: 140px;position: relative;
+                       <div style="border-radius: 50%; width: 150px;height: 150px; position: relative;
                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                           background-image: url(edit_video.png);background-position: -55px 0px;
-                           background-repeat: no-repeat; background-size: cover;">
+                           background-image: url(images/manage_videos.png); background-repeat: no-repeat;
+                           background-size: cover;">
                            <span class="text-center bg-primary" style="width: 40px;height: 40px;
-                                   bottom: -2px;right: -2px;position: absolute; border-radius: 25px;color:white;padding: 8px;">
+                                   bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
+                                   color:white;padding: 8px;">
                                 <i class="fa fa-folder-open"></i>
                            </span>
                        </div>
@@ -113,11 +113,13 @@ if (!$USER->instructor) {
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <div class="card text-center" style="margin: 5px; padding:5px;">
-                        <div style="border-radius: 50%; width: 140px;height: 140px;position: relative;
+                        <div style="border-radius: 50%; width: 150px;height: 150px;position: relative;
                             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                            background-image: url(publish_video.jpg); background-repeat: no-repeat; background-position: -150px -28px;">
+                            background-image: url(images/publish_videos.png); background-repeat: no-repeat;
+                            background-size: cover;">
                             <span class="text-center bg-primary" style="width: 40px;height: 40px;
-                                    bottom: -2px;right: -2px;position: absolute; border-radius: 25px;color:white;padding: 8px;">
+                                    bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
+                                    color:white;padding: 8px;">
                                 <i class="fa fa-location-arrow"></i>
                             </span>
                         </div>
@@ -131,8 +133,11 @@ if (!$USER->instructor) {
             </div>
 
             <form class="form-inline text-center" method="post" target="_self" id="metadata">
-                <input type="hidden" name="notifications" id="notifications" value="<?= $context['email'] ?>"/>
-                <input type="hidden" id="organizer" name="organizer" value="<?= $context['email'] ?> (<?= $context['user'] ?>)"/>
+                <input type="hidden" name="type"  id="type" value="remove"/>
+                <input type="hidden" id="organizer" name="organizer" value="<?= $context['email'] ?>
+                (<?= $context['user'] ?>)"/>
+                <input type="hidden" name="presenters" id="presenters" value="<?= $context['user'] ?"/>
+
                 <?php
                     if (count($context['providers']) > 1) {
                 ?>
@@ -159,7 +164,7 @@ if (!$USER->instructor) {
                     }
                 ?>
 
-                <button id="btnAccept" class="btn btn-success" type="button">Activate My Videos</button>
+                <button id="btnAccept" class="btn btn-success" type="button"><i class="fa fa-check"></i> Activate My Videos</button>
                 <span id="info" class="text-info" style="display:none;"><small>This might take a couple of seconds.</small></span>
                 <div class="col-xs-12" id="message"></div>
             </form>
@@ -183,23 +188,21 @@ $OUTPUT->footerStart();
         }
         function showError(a) {
             $('#' + a).html('<i class="fa fa-exclamation"></i> Error').addClass('disabled').attr('disabled', true);
-            $('#message').html('<p class="bg-danger">An error occurred while performing this action, please contact <a href="mailto:help@vula.uct.ac.za?subject=Vula - Please help with: Lecture Recording Setup">help@vula.uct.ac.za</a><br/> or call 021-650-5500 weekdays 8:30 - 17:00.</p>');
+            $('#message').html('<p class="bg-danger">An error occurred while performing this action, please contact
+            <a href="mailto:help@vula.uct.ac.za?subject=Vula - Please help with: Lecture Recording Setup">
+            help@vula.uct.ac.za</a><br/> or call 021-650-5500 weekdays 8:30 - 17:00.</p>');
         }
         function doPost(a, text) {
             $('#' + a).html('<i class="fa fa-cog fa-spin"></i>' + text);
             timeout = setTimeout(function(){ $('#info').show(); }, 1200);
 
             var contributor = $('#presenters').val().trim().replace(/\r?\n/g, ', ');
-            var notification = $('#notifications').val().trim().replace(/\r?\n/g, ', ');
 
             var data = {
                 "type": type,
-                "terms": "accept",
-                "visibility": "Vula site only",
                 "subject": '',
                 "contributor": (contributor.endsWith(', ') ? contributor.substring(0, contributor.length-2) : contributor),
-                "course": $('#provider').val(),
-                "notification": (notification.endsWith(', ') ? notification.substring(0, notification.length-2) : notification)
+                "course": $('#provider').val()
             }
 
             var jqxhr = $.post('<?= $context['submit'] ?>', data, function(result) {
