@@ -36,7 +36,7 @@ $out = array(
 );
 
 $cmd = NULL;
-$filename = realpath('tmp') ."/". $result['siteid'] .".json";
+$filename = realpath('tmp') ."/". str_replace('~','',$result['siteid']) .".json";
 $fp = fopen($filename, 'w');
 fwrite($fp, json_encode($result));
 fclose($fp);
@@ -56,7 +56,6 @@ if (!is_null($cmd)) {
         $out['msg'] = json_last_error_msg();
     }
 }
-
 
 // update output json file
 $result['msg'] = $out['msg'];

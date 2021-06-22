@@ -8,4 +8,4 @@ use \Tsugi\Core\Settings;
 $launch = LTIX::requireData();
 
 $menu = false; // We are not using a menu
-header( 'Location: '.addSession('instructor-home.php') ) ;
+header( 'Location: '.addSession('home.php') ) ;
