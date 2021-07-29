@@ -62,7 +62,7 @@ $OUTPUT->topNav($menu);
                             <div style="border-radius: 50%; width: 150px;height: 150px;position: relative;
                                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                                 background-image: url(images/upload_videos.png); background-repeat: no-repeat;
-                                background-size: cover;">
+                                background-size: cover;margin : 0px auto;">
                                 <span class="text-center bg-primary" style="width: 40px;height: 40px;
                                         bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
                                         color:white;padding: 8px;">
@@ -81,7 +81,7 @@ $OUTPUT->topNav($menu);
                         <div style="border-radius: 50%; width: 150px;height: 150px;position: relative;
                         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                         background-image: url(images/record_videos.png); background-repeat: no-repeat;
-                        background-size: cover;">
+                        background-size: cover;margin : 0px auto;">
                              <span class="text-center bg-primary" style="width: 40px;height: 40px;
                                     bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
                                     color:white;padding: 8px;">
@@ -99,7 +99,7 @@ $OUTPUT->topNav($menu);
                        <div style="border-radius: 50%; width: 150px;height: 150px; position: relative;
                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                            background-image: url(images/manage_videos.png); background-repeat: no-repeat;
-                           background-size: cover;">
+                           background-size: cover;margin : 0px auto;">
                            <span class="text-center bg-primary" style="width: 40px;height: 40px;
                                    bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
                                    color:white;padding: 8px;">
@@ -117,7 +117,7 @@ $OUTPUT->topNav($menu);
                         <div style="border-radius: 50%; width: 150px;height: 150px;position: relative;
                             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                             background-image: url(images/publish_videos.png); background-repeat: no-repeat;
-                            background-size: cover;">
+                            background-size: cover;margin : 0px auto;">
                             <span class="text-center bg-primary" style="width: 40px;height: 40px;
                                     bottom: -2px;right: -2px;position: absolute; border-radius: 25px;
                                     color:white;padding: 8px;">
