@@ -190,8 +190,8 @@ $OUTPUT->footerStart();
         function showError(a) {
             $('#' + a).html('<i class="fa fa-exclamation"></i> Error').addClass('disabled').attr('disabled', true);
             $('#message').html(`<p class="bg-danger">An error occurred while performing this action, please contact
-            <a href="mailto:help@vula.uct.ac.za?subject=Vula - Please help with: My Videos Setup">
-            help@vula.uct.ac.za</a><br/> or call 021-650-5500 weekdays 8:30 - 17:00.</p>`);
+            <a href="mailto:cilt-helpdesk@uct.ac.za?subject=Vula - Please help with: My Videos Setup">
+            cilt-helpdesk@uct.ac.za</a><br/> or call 021-650-5500 weekdays 8:30 - 17:00.</p>`);
         }
         function doPost(a, text) {
             $('#' + a).html('<i class="fa fa-cog fa-spin"></i>' + text);
