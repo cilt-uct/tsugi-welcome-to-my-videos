@@ -1,9 +1,9 @@
 <?php
 
 $REGISTER_LTI2 = array(
-    "name" => "My videos"
+    "name" => "Welcome to My videos"
     ,"FontAwesome" => "fa-video-camera"
-    ,"short_name" => "My videos"
+    ,"short_name" => "Welcome to My videos"
     ,"description" => "Shows a page welcome page to describe the benefits of having a My Videos tool on the user's homepage"
     ,"messages" => array("launch") // By default, accept launch messages..
     ,"privacy_level" => "public" // anonymous, name_only, public
